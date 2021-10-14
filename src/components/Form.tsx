@@ -1,10 +1,10 @@
 import { useRef, useState } from 'react';
 import Button from './Button';
 import Entry from './Entry';
-import Cliente from '../core/cliente';
+import Cliente from '../core/Cliente';
 
 interface FormProps{
-    saveFunction?: (nome: string, idade: number) => void,
+    saveFunction?: (cliente: Cliente) => void,
     cancelFunction?: () => void
     editMode: Boolean
     client?: Cliente
@@ -29,7 +29,7 @@ export default function Form(props: FormProps){
             <Entry value={idade} name="Idade" onChangeFunction={setIdade} readonly={false}></Entry>
 
             <div className='flex self-end w-1/3 justify-around'>
-                <Button onClickFunction={() => props.saveFunction(nome, idade)}
+                <Button onClickFunction={() => props.saveFunction(new Cliente(nome, idade, id ?? null))}
                  cor="blue">{id ? "Alterar" : "Salvar"}</Button>
                 <Button onClickFunction={props.cancelFunction} cor="gray">Cancelar</Button>
             </div>
