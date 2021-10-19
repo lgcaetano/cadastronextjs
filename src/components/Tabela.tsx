@@ -1,4 +1,4 @@
-import Cliente from '../core/Cliente'
+import Cliente from '../core/cliente'
 import { IconeEdicao } from './Icons'
 import { IconeLixo } from './Icons'
 

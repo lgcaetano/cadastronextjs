@@ -3,7 +3,7 @@ import ColecaoCliente from "../backend/db/ColecaoCliente"
 import Button from "../components/Button"
 import Form from "../components/Form"
 import Tabela from "../components/Tabela"
-import Cliente from "../core/Cliente"
+import Cliente from "../core/cliente"
 import ClienteRepositiorio from "../core/ClienteRepositorio"
 
 export default function useClientes(){

@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
 import Button from './Button';
 import Entry from './Entry';
-import Cliente from '../core/Cliente';
+import Cliente from '../core/cliente';
 
 interface FormProps{
     saveFunction?: (cliente: Cliente) => void,

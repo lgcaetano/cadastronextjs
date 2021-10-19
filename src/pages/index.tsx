@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import Layout from "../components/Layout"
 import Tabela from "../components/Tabela"
-import Cliente from "../core/Cliente"
+import Cliente from "../core/cliente"
 import Button from "../components/Button"
 import Form from '../components/Form';
 import ClienteRepositiorio from '../core/ClienteRepositorio';
