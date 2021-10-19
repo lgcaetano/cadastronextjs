@@ -61,19 +61,6 @@ export default function useClientes(){
     setFormMode(false)
   }
 
-  const cadastroComponent = (
-    <>
-      <Button cor="green" onClickFunction={() => {setFormMode(true), setCurrentClient(Cliente.vazio())}}>Novo Cliente</Button>
-      <Tabela clientes={clientes} clienteSelecionado={selecionarCliente}
-        clienteExcluido={excluirCliente}></Tabela>
-    </>
-  )
-  
-  const formComponent = (
-    <Form editMode={editMode} saveFunction={saveClient}
-      cancelFunction={() => { setFormMode(false), setEditMode(false) }}
-      client={currentClient}></Form>
-    )
 
     return {
         excluirCliente,
@@ -82,11 +69,10 @@ export default function useClientes(){
         editClient,
         obterClientes,
         saveClient,
+        setFormMode,
+        setCurrentClient,
         clientes,
         formMode,
         currentClient, 
-        editMode,
-        cadastroComponent,
-        formComponent
     }
 }

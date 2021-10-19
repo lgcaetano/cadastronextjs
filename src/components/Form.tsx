@@ -6,7 +6,6 @@ import Cliente from '../core/Cliente';
 interface FormProps{
     saveFunction?: (cliente: Cliente) => void,
     cancelFunction?: () => void
-    editMode: Boolean
     client?: Cliente
 }
 

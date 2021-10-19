@@ -14,8 +14,8 @@ export default function Tabela(props: TabelaProps){
 
     function renderizarCabecalho(){
         return (
-            <tr>
-                <th className=' px-4 py-3'>Código</th>
+            <tr className="bg-gradient-to-r from-purple-500 to-purple-800">
+                <th className=' px-4 py-3 lg:flex hidden'>Código</th>
                 <th className=' px-4 py-3'>Nome</th>
                 <th className=' px-4 py-3'>Idade</th>
                 {exibirAcoes ? <th className=' px-4 py-3 text-center'>Ações</th> : false}
@@ -25,16 +25,16 @@ export default function Tabela(props: TabelaProps){
 
     function renderizarAcoes(cliente: Cliente) {
         return (
-            <td className=' px-4 py-2 text-center'>
+            <td className=' px-4 py-2 text-center flex items-center h-full'>
                 {props.clienteSelecionado ? (
-                <button className=' mr-4 text-green-600 rounded-full p-2 hover:bg-purple-50'
+                <button className=' sm:mr-4 text-green-600 rounded-full p-2 hover:bg-purple-50'
                 onClick={() => props.clienteSelecionado?.(cliente)}>
                     {IconeEdicao}
                 </button>
                 ) : false}
 
                 {props.clienteExcluido ? (
-                <button className='ml-4 text-red-600 rounded-full p-2 hover:bg-purple-50'
+                <button className='sm:ml-4 text-red-600 rounded-full p-2 hover:bg-purple-50'
                 onClick={() => props.clienteExcluido?.(cliente)}>
                     {IconeLixo}
                 </button>
@@ -47,7 +47,7 @@ export default function Tabela(props: TabelaProps){
         return props.clientes?.map((cliente, index) => {
             return (
                 <tr key={cliente.id} className={`${index % 2 ? 'bg-purple-100' : 'bg-purple-200'}`}>
-                    <td className=' px-4 py-3'>{cliente.id}</td>
+                    <td className=' px-4 py-3 lg:flex hidden'>{cliente.id}</td>
                     <td className=' px-4 py-3'>{cliente.nome}</td>
                     <td className=' px-4 py-3'>{cliente.idade}</td>
                     {exibirAcoes ? renderizarAcoes(cliente) : false}
@@ -59,7 +59,7 @@ export default function Tabela(props: TabelaProps){
 
     return (
         <table className={`rounded-xl bg-gradient-to-r from-purple-500 
-            to-purple-800 overflow-hidden w-full`}>
+            to-purple-800 overflow-hidden w-full  max-w-full`}>
 
             <thead className='bg-purple-500 text-gray-100 text-left'>
                 {renderizarCabecalho()}
