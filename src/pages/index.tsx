@@ -47,7 +47,6 @@ export default function Home() {
      text-white
     `}>
       <Layout title="Cadastro Simples">
-        <h1>{process.env.NEXT_PUBLIC_FIREBASE_API_KEY}</h1>
         {formMode ? formComponent : cadastroComponent}
       </Layout>
     </div>
