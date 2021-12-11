@@ -25,7 +25,7 @@ export default function Form(props: FormProps){
             {id ? <Entry value={id} name="Código" onChangeFunction={setId} readonly={true}></Entry> : false}
 
             <Entry value={nome} name="Nome" onChangeFunction={setNome} readonly={false}></Entry>
-            <Entry value={idade} name="Idade" onChangeFunction={setIdade} readonly={false}></Entry>
+            <Entry value={idade} name="Idade" onChangeFunction={setIdade} readonly={false} type={"number"}></Entry>
 
             <div className='flex self-end w-1/3 justify-around'>
                 <Button onClickFunction={() => props.saveFunction(new Cliente(nome, idade, id ?? null))}
